@@ -26,5 +26,5 @@ process.stdin.on('data', (chunk) => {
 });
 
 process.stdin.on('end', () => {
-    main(input.trim());
+    main(input.trim()); 
 });
