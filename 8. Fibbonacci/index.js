@@ -4,34 +4,37 @@ function nthFibo(num) {
 
     // f0 = 0, f1 = 1, f2 = 1
     // fn = fn-1 + fn-2
-    let nth = 0;
-    let a = b = 0
-    for (let i = 1; i <= num; i++) {
-        if (i === 1) {
-            a = 1;
+    const MOD = 1000000007n;
+    let a = 0n;
+    let b = 1n;
+    let nth = 0n;
+    if(num === 1){
+      return a
+    }else if( num === 2){
+      return b
+    }else{
+      
+      for (let i = 3; i<=num + 1; i++){
+        
+       
+        nth = (a + b ) % MOD
+        a = b
+        b = nth
+ 
 
-
-
-        } else if (i === 2) {
-            b = 1
-
-        } else {
-            a = b
-            b = nth
-
-        }
-
-        nth = a + b;
+      }
+            // console.log(nth)
+              return nth
     }
-
-    console.log(nth)
+    
 
 }
 
 
 function main(input) {
     let num = Number(input)
-    nthFibo(num)
+   let res =  nthFibo(num)
+   console.log(res.toString())
 }
 
 let input = "";
